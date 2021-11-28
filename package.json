@@ -3,23 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nestjs/common": "^8.2.3",
+    "@nestjs/core": "^8.2.3",
+    "@nestjs/platform-express": "^8.2.3",
     "@types/node": "^16.11.10",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "antd": "^4.17.2",
+    "cross-env": "^7.0.3",
+    "nest-next": "^9.4.0",
     "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.4.0",
     "styled-components": "^5.3.3",
-    "typescript": "^4.5.2",
     "web-vitals": "^1.0.1"
   },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.0.4",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "nodemon src/server/main.ts",
+    "build:clean": "rimraf .next",
+    "build:ui": "npx next build",
+    "build:server": "npx tsc --project tsconfig.server.json && npx babel .next/production-server -d .next/production-server --extensions \".js\"",
+    "build": "yarn build:clean && yarn build:ui && yarn build:server",
+    "start": "cross-env NODE_ENV=production node .next/production-server/src/main.js"
   },
   "eslintConfig": {
     "extends": [
