@@ -5,7 +5,7 @@ import { DashboardController } from './dashboard/dashboard.controller';
 import { DashboardService } from './dashboard/dashboard.service';
 
 @Module({
-  imports: [RenderModule.forRootAsync(Next({ dev: process.env.NODE_ENV !== 'production' })),],
+  imports: [RenderModule.forRootAsync(Next({ dev: process.env.NODE_ENV !== 'production' }))],
   controllers: [DashboardController],
   providers: [DashboardService],
 })
