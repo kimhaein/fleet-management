@@ -1,6 +1,6 @@
 import React, {FC} from "react";
-import MapTemplates from '../../templates/mapTemplates/MapTemplates';
 import { Layout, Menu } from 'antd';
+import MapTemplates from '../../templates/mapTemplates/MapTemplates';
 const { Sider, Content } = Layout;
 
 interface PropTypes {}

@@ -1,30 +1,23 @@
-import { FC } from "react";
+import { FC } from 'react';
 import { Layout, Menu } from 'antd';
-const { Sider, Content } = Layout;
-import {
-  DashboardOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from '@ant-design/icons';
+const SideBar = Layout.Sider;
+import { DashboardOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import type { AppProps } from 'next/app';
+import Link from 'next/link';
 
-const MyApp:FC<AppProps> = ({ Component, pageProps }:AppProps) =>{
+const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout style={{height:'100vh'}}>
-      <Sider trigger={null} collapsible collapsed={true}>
+    <Layout style={{ height: '100vh' }}>
+      <SideBar trigger={null} collapsible collapsed={true}>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<DashboardOutlined />}>
-            Dashboard
-          </Menu.Item>
-          <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-            nav 2
-          </Menu.Item>
-          <Menu.Item key="3" icon={<UploadOutlined />}>
-            nav 3
+            <Link href="/dashboard">
+              <a>Dashboard</a>
+            </Link>
           </Menu.Item>
         </Menu>
-      </Sider>
+      </SideBar>
       <Layout>
         <Component {...pageProps} />
       </Layout>
