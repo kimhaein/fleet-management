@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage, NextPageContext } from 'next';
 import { Layout } from 'antd';
-const { Content } = Layout;
+import DashBoadPage from '../../../client/components/pages/dashboard/DashBoadPage';
 
 interface PropTypes {
     title: string;
@@ -9,7 +9,7 @@ interface PropTypes {
 }
 const Dashboard: NextPage<PropTypes> = (props:PropTypes) => {
     const { posts } = props;
-    return <div>{posts}</div>
+    return <DashBoadPage />
 }
 
 export async function getServerSideProps(ctx: NextPageContext) {
