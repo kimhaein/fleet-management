@@ -26,17 +26,7 @@ const MyApp:FC<AppProps> = ({ Component, pageProps }:AppProps) =>{
         </Menu>
       </Sider>
       <Layout>
-        <Content
-          style={{
-            margin: 16,
-            padding: 24,
-            minHeight: 280,
-            background: '#fff',
-            boxShadow: '3px 3px 10px #ccc'
-          }}
-        >
-          <Component {...pageProps} />
-        </Content>
+        <Component {...pageProps} />
       </Layout>
     </Layout>
   )
