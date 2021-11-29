@@ -22,7 +22,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <Component {...pageProps} />
       </Layout>
     </Layout>
-  )
-}
+  );
+};
 
 export default MyApp;

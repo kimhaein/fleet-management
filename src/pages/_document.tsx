@@ -1,15 +1,15 @@
-import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document'
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
 declare global {
-  interface Window{
+  interface Window {
     kakao: any;
   }
 }
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx:DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
@@ -19,12 +19,12 @@ class MyDocument extends Document {
           <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ebf473a007c57bce062553ffd49970f2"></script>
         </Head>
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

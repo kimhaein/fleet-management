@@ -29,7 +29,7 @@
     "babel-plugin-styled-components": "^2.0.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.0",
     "ts-node": "^10.4.0",
@@ -41,7 +41,9 @@
     "build:ui": "npx next build",
     "build:server": "npx tsc --project tsconfig.server.json && npx babel .next/production-server -d .next/production-server --extensions \".js\"",
     "build": "yarn build:clean && yarn build:ui && yarn build:server",
-    "start": "cross-env NODE_ENV=production node .next/production-server/src/main.js"
+    "start": "cross-env NODE_ENV=production node .next/production-server/src/main.js",
+    "prepare": "husky install",
+    "lint": "eslint --ext **/*.{ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
@@ -63,10 +65,5 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn eslint"
-    }
   }
 }
