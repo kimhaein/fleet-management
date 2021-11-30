@@ -1,13 +1,14 @@
 import React from 'react';
 import { NextPage, NextPageContext } from 'next';
-import DashBoadPage from '../../../client/components/pages/dashboard/DashBoradPage';
+import DashBoardPage from '../../../client/components/pages/dashboard/DashBoardPage';
+
 interface PropTypes {
   title: string;
   posts: string;
 }
 const Dashboard: NextPage<PropTypes> = (props: PropTypes) => {
   const { posts } = props;
-  return <DashBoadPage />;
+  return <DashBoardPage />;
 };
 
 export async function getServerSideProps(ctx: NextPageContext) {
