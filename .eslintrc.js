@@ -4,7 +4,14 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended', // TypeScript rules
+    'plugin:react/recommended', // React rules
+    'plugin:react-hooks/recommended', // React hooks rules
+    'prettier', // Prettier plugin
+    'plugin:prettier/recommended', // Prettier recommended rules
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -23,7 +30,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/prop-types': 'off',
-
   },
   settings: {
     react: {
