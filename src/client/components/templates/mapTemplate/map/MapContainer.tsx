@@ -4,7 +4,7 @@ interface PropTypes {
   children?: ReactElement;
 }
 
-const MapTemplates: FC<PropTypes> = ({ children }: PropTypes) => {
+const MapContainer: FC<PropTypes> = ({ children }: PropTypes) => {
   const mapRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,4 +22,4 @@ const MapTemplates: FC<PropTypes> = ({ children }: PropTypes) => {
     </>
   );
 };
-export default MapTemplates;
+export default MapContainer;

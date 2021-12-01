@@ -10,7 +10,7 @@ import styled from 'styled-components';
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout style={{ height: '100vh' }}>
-      <SideBar trigger={null} collapsible collapsed={true}>
+      <SideBar trigger={null} collapsible collapsed={true} style={{ zIndex: 9999999 }}>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<DashboardOutlined />}>
             <Link href="/dashboard">
