@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { Descriptions, Tabs, Tag } from 'antd';
+import { Tabs, Tag } from 'antd';
 const { TabPane } = Tabs;
 import MapContainer from '../map/MapContainer';
 import styled from 'styled-components';
 import TimeLine from '../../../atoms/timeLine/TimeLine';
+import { DescriptionsContents } from '../../../atoms/descriptions/Descriptions';
 
 interface PropTypes {}
 
@@ -16,13 +17,7 @@ const MapTabContents: FC<PropTypes> = (props: PropTypes) => {
     >
       <TabPane tab="운행 정보" key="1">
         <TabContentsWrap>
-          <Descriptions bordered size="small" column={1}>
-            <Descriptions.Item label="서비스명">서비스 이름</Descriptions.Item>
-            <Descriptions.Item label="노선명"> 노선 이름</Descriptions.Item>
-            <Descriptions.Item label="차량운행 ID">6002</Descriptions.Item>
-            <Descriptions.Item label="운행건수">4건</Descriptions.Item>
-            <Descriptions.Item label="매출">0원</Descriptions.Item>
-          </Descriptions>
+          <DescriptionsContents data={dummyDescriptions} />
         </TabContentsWrap>
       </TabPane>
       <TabPane tab="경로 이력" key="2">
@@ -66,4 +61,23 @@ const TabContentsWrap = styled.div`
 const dummy = [
   { id: 1, arrivalDateTime: '10:45:27', arrivalStationName: '한샘사옥 앞', boardingDateTime: '10:45:27', boardingStationName: '첨단산업센터' },
   { id: 2, arrivalDateTime: '10:30:27', arrivalStationName: '첨단산업센터', boardingDateTime: '10:30:27', boardingStationName: '한샘사옥 앞' },
+];
+
+const dummyDescriptions = [
+  {
+    data: {
+      serviceName: '운송 서비스',
+      routeName: '상암 테스트 노선',
+      vehicleId: '00001',
+      totalOrder: '0건',
+      revenue: '0원',
+    },
+    label: {
+      serviceName: '서비스명',
+      routeName: '노선명',
+      vehicleId: '차량운행 ID',
+      totalOrder: '총 운행 건수',
+      revenue: '총 매출',
+    },
+  },
 ];

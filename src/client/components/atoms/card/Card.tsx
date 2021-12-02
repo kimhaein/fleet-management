@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Card as AntCard, CardProps } from 'antd';
-import { EllipsisOutlined } from '@ant-design/icons';
 
 interface PropTypes extends CardProps {}
 
